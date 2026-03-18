@@ -1,0 +1,85 @@
+[Instruksi Utama Pengembangan]
+Tolong gunakan pendekatan *data-driven*. Buatkan objek *dummy data* (misal berupa array/JSON di dalam kodemu) untuk seluruh konten seperti teks, gambar, harga, detail spesifikasi rumah, dan list FAQ. *Render* seluruh UI website dari data tersebut agar tidak ada teks yang di-*hardcode* di dalam elemen HTML. Gunakan *dummy content* yang relevan untuk "Tentrem Residence", sebuah perumahan bernuansa alam di area Wonogiri. Untuk gambar dummy, gunakan URL gambar yang sesuai dengan KONTEX GAMBAR yang saya tuliskan di beberapa section.
+
+[Global Styling & Behavior]
+- Tema visual: "Natural Oasis" yang asri, *homey*, *clean*, dan *eco-friendly*.
+- Skema Warna: 
+  - Background Utama: *Warm Beige* (Krem hangat) atau *Off-white* (Putih gading).
+  - Warna Sekunder (Navbar, Footer, Judul): *Emerald Green* atau *Forest Green*.
+  - Warna Aksen (Tombol CTA, Badge Promo, Ikon): *Terracotta* (Merah bata) atau Cokelat Kayu (*Wood*).
+- Font: Kombinasi Sans-Serif modern (misal: Inter atau Poppins) yang mudah dibaca.
+- Semua elemen harus responsif (Mobile-first design) dan memiliki transisi *smooth* saat di-hover.
+- Terdapat *Floating Action Button* (FAB) logo WhatsApp di pojok kanan bawah yang selalu melayang (sticky) dan beranimasi *pulse* (berdenyut) pelan.
+- [Template Pesan WA untuk semua tombol CTA/WA]: "Halo Admin Tentrem Residence, saya melihat informasi dari website. Saya tertarik dan ingin mendapat info lebih lanjut mengenai promo dan ketersediaan unitnya." (Format ke dalam URL wa.me).
+
+1. Navbar (Header)
+- Posisi: Sticky di atas saat di-scroll. Latar belakang transparan di awal, berubah menjadi solid putih/*off-white* dengan *shadow* tipis saat di-scroll ke bawah.
+- Kiri: Logo perumahan dan teks nama merk "Tentrem Residence" yang tebal.
+- Tengah: Menu navigasi (Beranda, Promo, Tipe Rumah, Fasilitas, Lokasi). Di layar mobile, ini berubah menjadi *Hamburger Menu*.
+- Kanan: Tombol CTA (*Call to Action*) "Hubungi Kami" dengan *style primary button* (warna aksen).
+
+2. Hero Section
+- Latar Belakang: Gambar *full screen* berkualitas tinggi (foto drone perumahan dari atas atau gerbang utama yang asri). [Konteks Gambar Dummy: Foto udara/drone view dari atas yang memperlihatkan gerbang perumahan elegan atau jalan aspal yang dikelilingi banyak pepohonan hijau dan bukit]. Beri *overlay* gelap (opacity 40%) agar teks di atasnya terbaca jelas.
+- Konten Tengah (Vertical & Horizontal Center):
+  - Animasi *fade-in-up* untuk teks.
+  - Slogan utama yang menarik (Heading 1): "Kawasan hunian yang asri, nyaman & menentramkan."
+  - Sub-slogan: "Tentrem tinggalnya, tentrem juga cicilannya. Wujudkan impian keluarga punya rumah hijau di Wonogiri tanpa harus menguras tabungan."
+  - Dua tombol: "Lihat Tipe Rumah" (*Primary*) dan "Tonton Video" (*Outline/Secondary* dengan ikon *play*).
+
+3. Promo Spesial Section
+- Layout: *Banner* horizontal lebar (*Full-width*) atau satu *Card* besar yang mencolok dengan warna *Terracotta/Wood*.
+- Konten: 
+  - Teks tebal: "Promo Spesial Bulan Ini: DP 0%, Free Kanopi & Bebas Biaya BPHTB!"
+  - Elemen Interaktif: *Countdown Timer* statis/animasi dummy bertuliskan "Promo Berakhir Dalam: 05 Hari : 12 Jam : 30 Menit".
+  - Tombol CTA: "Klaim Promo Sekarang".
+
+4. "Pilih Tipe Rumah" Section (Model Rumah)
+- Judul Section: "Temukan Hunian Impian Anda di Tentrem Residence".
+- Layout: *Bento Box Grid* atau *Grid Card* (3 kolom di desktop, 1 kolom di mobile).
+- *Card Behavior*: 
+  - Saat keadaan normal: Menampilkan gambar fasad rumah penuh. [Konteks Gambar Dummy: Foto arsitektur tampak depan (eye-level perspective) rumah modern tropis 1 lantai dengan taman kecil].
+  - Saat di-*hover*: Gambar sedikit *zoom in* (scale), muncul *overlay* gradient gelap dari bawah, dan teks nama tipe model rumah muncul dari bawah (*slide-up*).
+- *Click Behavior* (Membuka Modal):
+  - Saat card diklik, muncul **Pop-up Modal** berukuran besar yang menutupi layar (dengan *backdrop blur*).
+  - Isi Modal:
+    - Tombol *Close* (X) di pojok kanan atas.
+    - Kiri: *Image Slider* (Carousel) interaktif berisi gambar fasad, interior, dan denah rumah (*floor plan*). [Konteks Gambar Dummy: Campuran 3 gambar -> 1 foto fasad depan, 1 foto interior ruang tamu yang hangat, dan 1 gambar denah/blueprint tata letak ruangan 2D/3D]. Bisa di-klik *Next/Prev*.
+    - Kanan: Nama Tipe Rumah (H2), label harga "Mulai dari Rp XXX Juta" dengan teks mencolok, *Badge* "Stok Tersisa: X Unit" (warna merah/kuning).
+    - Spesifikasi Singkat: Ikon jumlah kamar tidur, kamar mandi, luas tanah (LT), luas bangunan (LB).
+    - Spesifikasi Material: List peluru (Pondasi, Dinding, Rangka atap, dll).
+    - Paragraf *marketing copy* singkat yang persuasif.
+    - Tombol CTA bawah: "Booking Sekarang" (terhubung ke WA).
+
+5. "Kenapa Memilih Kami" Section (Fasilitas & Keunggulan)
+- Layout: Grid 2x2 atau baris horizontal dengan ikon.
+- Konten: Kartu-kartu kecil berisi ikon SVG minimalis dan teks. (Misal: Ikon gembok untuk Keamanan, ikon pohon untuk Lingkungan Asri, ikon jalan untuk Akses Lebar).
+- Animasi: Kartu muncul satu per satu (*staggered fade-in*) saat di-scroll masuk ke layar.
+
+6. Lokasi & Aksesibilitas Section
+- Layout: *Split layout* (Kiri dan Kanan).
+- Kolom Kiri: Embed iframe Google Maps area Wonogiri. **(Instruksi Penting: Wajib tambahkan atribut `loading="lazy"` pada iframe Google Maps agar tidak membuat website lag saat *loading* awal).**
+- Kolom Kanan: Judul "Lokasi Strategis". Di bawahnya terdapat daftar jarak/waktu tempuh ke titik penting menggunakan ikon (misal: Ikon mobil -> 5 Menit ke Alun-Alun Wonogiri, Ikon bus -> 10 Menit ke Terminal Induk, Ikon rumah sakit -> 5 Menit ke RSUD).
+
+7. Progres Pembangunan / Testimoni Section
+- Judul Section: "Bukti Komitmen Kami".
+- Layout: *Image Carousel* (Slider horizontal) yang rapi agar tidak memakan ruang vertikal.
+- Konten: Foto-foto dummy progres di lapangan (pengecoran, dll) dengan teks *caption* kecil di bawah setiap foto. [Konteks Gambar Dummy: Foto asli pekerja bangunan sedang mengecor jalan, menyusun bata merah, atau alat berat di lokasi proyek tanah].
+
+8. Simulasi KPR Section [STATUS: DRAFT / HIDDEN]
+- **(Instruksi Penting: Buat kodenya dan desain UI-nya secara lengkap sesuai deskripsi berikut, tapi tolong jadikan komentar HTML/JS (di-comment out) pada hasil akhirnya agar tidak tampil di layar user. Fitur ini disembunyikan sementara).**
+- Latar Belakang: Warna pemisah visual.
+- Layout: Form interaktif dalam *Card* besar.
+- Konten: *Input Slider* atau kolom ketik untuk: Harga Rumah, DP, Tenor, dan Suku Bunga. Area hasil menampilkan estimasi cicilan per bulan.
+
+9. FAQ (Tanya Jawab) Section
+- Layout: Sangat minimalis. Hanya berupa satu *Banner* kecil atau *Card* memanjang di tengah layar.
+- Konten: Teks "Punya Pertanyaan Seputar Tentrem Residence?" dan sebuah tombol besar bertuliskan "Lihat FAQ".
+- *Behavior*: Saat tombol diklik, muncul **Modal Pop-up** berukuran sedang.
+  - Isi Modal FAQ: Menggunakan gaya *Accordion* (Teks pertanyaan yang jika diklik akan memunculkan jawaban di bawahnya secara *drop-down*). Gunakan *dummy* pertanyaan seputar SHM, Booking Fee, dll.
+
+10. Footer (Kontak)
+- Layout: 3 atau 4 kolom.
+- Kolom 1: Logo, deskripsi singkat Tentrem Residence, alamat lengkap di Wonogiri.
+- Kolom 2: Tautan Cepat (Beranda, Tipe Rumah, Fasilitas).
+- Kolom 3: Kontak (Ikon WhatsApp + Nomor, Ikon Email, Ikon Instagram).
+- Bawah: Garis pemisah horizontal dan teks *Copyright © 2026 Tentrem Residence*.

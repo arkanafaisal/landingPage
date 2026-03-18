@@ -1,0 +1,95 @@
+/* === GLOBAL BASE === */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* === FONT FAMILIES === */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body:    "Plus Jakarta Sans", sans-serif;
+  --font-mono:    "JetBrains Mono", monospace;
+
+  /* === WARNA BRAND === */
+  --color-bg:             #F7F3EE;
+  --color-surface:        #FFFFFF;
+  --color-surface-alt:    #EDE8E1;
+
+  /* UPDATE WARNA AKSEN DI SINI */
+  --color-forest:         #006372; /* Hijau Toska */
+  --color-forest-light:   #008494; /* Varian lebih terang untuk toska */
+  --color-forest-muted:   #E6F7F9; /* Varian sangat pudar untuk background toska */
+
+  --color-terracotta:     #fd5105; /* Oranye */
+  --color-terracotta-h:   #e04804; /* Oranye lebih gelap untuk hover */
+  --color-wood:           #8B5E3C;
+
+  --color-text-primary:   #1C1C1C;
+  --color-text-body:      #4A4A4A;
+  --color-text-muted:     #8A8A8A;
+  --color-text-inverse:   #F7F3EE;
+
+  /* === BORDER RADIUS === */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-pill: 9999px;
+
+  /* === SHADOW === */
+  --shadow-card:  0 2px 12px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-modal: 0 24px 64px rgba(0,0,0,0.25);
+}
+
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+/* Sembunyikan scrollbar di carousel tapi tetap scrollable */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* === CUSTOM KEYFRAMES === */
+
+/* Untuk Floating WA Button */
+@keyframes waPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.animate-wa-pulse {
+  animation: waPulse 2.5s ease-out infinite;
+}
+
+/* Untuk chevron bounce di hero */
+@keyframes chevronBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+.animate-chevron-bounce {
+  animation: chevronBounce 1.8s ease-in-out infinite;
+}
+
+/* Diagonal stripe untuk FAQ banner */
+.bg-diagonal-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.04) 10px,
+    rgba(255,255,255,0.04) 20px
+  );
+}
+
+/* Modal open: prevent body scroll */
+body.modal-open {
+  overflow: hidden;
+}
