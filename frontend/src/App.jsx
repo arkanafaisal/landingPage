@@ -554,15 +554,15 @@ function FAQSection() {
     <section className="py-20 px-4 bg-surface">
       <div className="container mx-auto max-w-3xl">
         
-        <div className="bg-terracotta bg-diagonal-stripe py-16 px-8 text-center rounded-[var(--radius-xl)] shadow-lg mb-16 text-white">
+        <div className="bg-forest bg-diagonal-stripe py-16 px-8 text-center rounded-[var(--radius-xl)] shadow-lg mb-16 text-white">
           <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold mb-4">Masih Ada Pertanyaan?</h2>
           <p className="text-white/90 mb-8 max-w-xl mx-auto">Kami mengumpulkan pertanyaan yang sering ditujukan calon penghuni kepada kami. Jika belum terjawab, jangan ragu hubungi admin.</p>
-          <a href={GLOBAL_WA_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-white text-terracotta rounded-full px-8 py-3.5 font-bold hover:shadow-lg hover:-translate-y-1 transition-all">
+          <a href={GLOBAL_WA_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-terracotta text-white rounded-full px-8 py-3.5 font-bold hover:shadow-lg hover:-translate-y-1 transition-all">
             <MessageCircle size={20} /> Chat WhatsApp Admin
           </a>
         </div>
 
-        <div className="space-y-4">
+        <div className="hidden space-y-4">
           <h3 className="text-2xl font-bold mb-6 text-center text-text-primary">FAQ (Tanya Jawab)</h3>
           {SITE_DATA.faq.map((item, idx) => (
             <div key={idx} className="border-b border-black/10 last:border-0 overflow-hidden">
